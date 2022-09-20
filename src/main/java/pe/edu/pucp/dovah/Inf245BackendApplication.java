@@ -15,6 +15,6 @@ public class Inf245BackendApplication {
 
     @GetMapping
     public String hello() {
-        return "Hello World";
+        return "Hello World from Lloyd's computer";
     }
 }
