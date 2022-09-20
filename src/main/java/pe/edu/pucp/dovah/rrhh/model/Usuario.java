@@ -1,4 +1,4 @@
-package pe.edu.pucp.dovah;
+package pe.edu.pucp.dovah.rrhh.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
