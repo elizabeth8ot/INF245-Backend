@@ -1,9 +1,9 @@
-package pe.edu.pucp.dovah.rrhh.repository;
+package pe.edu.pucp.dovah.RRHH.repository;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
-import pe.edu.pucp.dovah.rrhh.model.Usuario;
+import pe.edu.pucp.dovah.RRHH.model.Usuario;
 
 import java.util.List;
 
