@@ -1,3 +1,3 @@
 # Backend
 
-spring
+Para ejecutarlo, necesitas configurar la base de datos.
