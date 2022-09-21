@@ -1,8 +1,11 @@
 package pe.edu.pucp.dovah.RRHH.model;
 
+import pe.edu.pucp.dovah.asignaciones.model.Tarea;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -17,6 +20,9 @@ public abstract class Usuario {
     private String correo;
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaActivacion;
+
+    @ManyToMany
+    private List<Tarea> listaTareas;
 
     protected Usuario() {}
 
