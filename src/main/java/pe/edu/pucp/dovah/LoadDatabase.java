@@ -6,7 +6,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import pe.edu.pucp.dovah.RRHH.model.Administrador;
+import pe.edu.pucp.dovah.RRHH.model.Profesor;
 import pe.edu.pucp.dovah.RRHH.repository.AdministradorRepository;
+import pe.edu.pucp.dovah.RRHH.repository.ProfesorRepository;
 import pe.edu.pucp.dovah.asignaciones.model.Tarea;
 import pe.edu.pucp.dovah.asignaciones.repository.TareaRepository;
 
@@ -18,12 +20,21 @@ public class LoadDatabase {
     public CommandLineRunner loadAdministrador(AdministradorRepository repository){
         return (args) -> {
             if(repository.findAll().isEmpty()){
-                log.info("Creando administrador"+repository.save(new Administrador("Juan","Veliz",
+                log.info("Creando administrador "+repository.save(new Administrador("Juan","Veliz",
                         'M',"20193345","jveliz@gmail.com")));
             }
         };
     }
+    @Bean
+    public CommandLineRunner loadProfesor(ProfesorRepository repository){
+        return (args) -> {
+            if(repository.findAll().isEmpty()){
+                log.info(("Creando profesor "+repository.save(new Profesor("Rony","Cueva",'M',
+                        "X2458","rcueva@pucp.edu.pe","http//...."))));
+            }
 
+        };
+    }
     @Bean
     public CommandLineRunner loadTareas(TareaRepository repository) {
         return (args) -> {
