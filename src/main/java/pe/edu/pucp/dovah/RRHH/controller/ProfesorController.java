@@ -1,5 +1,6 @@
 package pe.edu.pucp.dovah.RRHH.controller;
 
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.rest.webmvc.BasePathAwareController;
@@ -9,8 +10,10 @@ import pe.edu.pucp.dovah.RRHH.model.Administrador;
 import pe.edu.pucp.dovah.RRHH.model.Profesor;
 import pe.edu.pucp.dovah.RRHH.repository.AdministradorRepository;
 import pe.edu.pucp.dovah.RRHH.repository.ProfesorRepository;
+import pe.edu.pucp.dovah.asignaciones.model.Tarea;
 
 import java.util.List;
+import java.util.Map;
 
 @BasePathAwareController
 @RestController
@@ -21,23 +24,44 @@ public class ProfesorController {
     public ProfesorController(ProfesorRepository repository) {
         this.repository = repository;
     }
+
+    /*
+        Listar todas los profesores
+    */
+
     @GetMapping("/profesor")
     List<Profesor> all(){
         return repository.findAll();
     }
+
+    /*
+        Listar un profesor en especifico
+    */
 
     @GetMapping("/profesor/{id}")
     Profesor obtenerProfesorPorId(@PathVariable int id){
         return repository.findById(id).orElseThrow(() -> new UsuarioNotFoundException(id));
     }
 
+
+
     @DeleteMapping("/profesor/{id}")
     void eliminarProfesor(@PathVariable int id){
         repository.deleteById(id);
     }
+    /*
+        Insertar nuevo profesor
+    */
 
     @PostMapping("/profesor")
-    Profesor nuevoProfesor(@RequestBody Profesor nuevoProfesor){
-        return repository.save(nuevoProfesor);
+    Profesor nuevoProfesor(@RequestBody Map<String,Object> nuevoProfesor){
+        log.info("Agregando profesor");
+        var json = new JSONObject(nuevoProfesor);
+        var profesor = new Profesor(json.getString("nombre"),json.getString("apellido"),
+                                    json.getString("genero").charAt(0),json.getString("codigoPUCP"),
+                                    json.getString("correo"),json.getString("urlDisponibilidad"));
+
+
+        return repository.save(profesor);
     }
 }
