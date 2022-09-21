@@ -5,7 +5,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.rest.webmvc.BasePathAwareController;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.pucp.dovah.LoadDatabase;
 import pe.edu.pucp.dovah.asignaciones.exception.TareaNotFoundException;
 import pe.edu.pucp.dovah.asignaciones.model.Tarea;
 import pe.edu.pucp.dovah.asignaciones.repository.TareaRepository;
@@ -23,11 +22,25 @@ public class TareaController {
         this.repository = repository;
     }
 
+    /*
+    Listar todas las tareas registradas
+     */
     @GetMapping("/tareas")
     List<Tarea> all() {
         return repository.findAll();
     }
 
+    /*
+    Listar una tarea en especifico
+     */
+    @GetMapping("/tareas/{id}")
+    Tarea one(@PathVariable Long id) {
+        return repository.findById(id).orElseThrow(() -> new TareaNotFoundException(id));
+    }
+
+    /*
+    Insertar nueva tarea
+     */
     @PostMapping("/tareas")
     Tarea newTarea(@RequestBody Map<String, Object> newTarea) {
         log.info("Agregando tarea...");
@@ -36,8 +49,18 @@ public class TareaController {
         return repository.save(tarea);
     }
 
-    @GetMapping("/tareas/{id}")
-    Tarea one(@PathVariable Long id) {
-        return repository.findById(id).orElseThrow(() -> new TareaNotFoundException(id));
+    /*
+    Modificar la nota de una tarea
+     */
+    @PostMapping("/tareas/modificarNota")
+    Tarea modificarNota(@RequestBody Map<String, Object> map) {
+        var json = new JSONObject(map);
+        Long id = json.getLong("id");
+        int nota = json.getInt("nota");
+        var tarea = repository.findById(id).orElseThrow(() -> new TareaNotFoundException(id));
+        log.info(String.format("Modificando nota '%d' por nota '%d' de la tarea con id '%d'",
+                tarea.getNota(), nota, id));
+        tarea.setNota(nota);
+        return repository.save(tarea);
     }
 }

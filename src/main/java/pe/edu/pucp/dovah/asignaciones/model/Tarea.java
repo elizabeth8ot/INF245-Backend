@@ -1,7 +1,10 @@
 package pe.edu.pucp.dovah.asignaciones.model;
 
+import pe.edu.pucp.dovah.RRHH.model.Usuario;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 public class Tarea {
@@ -11,6 +14,9 @@ public class Tarea {
     private String descripcion;
     private int nota;
     private LocalDateTime fechaCreacion;
+
+    @ManyToMany(mappedBy = "listaTareas")
+    List<Usuario> listaUsuarios;
 
     protected Tarea() {}
 
