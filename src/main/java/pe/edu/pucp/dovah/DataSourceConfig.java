@@ -18,7 +18,7 @@ public class DataSourceConfig {
 
         try (var file = new FileInputStream("database.properties")) {
             prop.load(file);
-            dataSourceBuilder.url("jdbc:mysql://" + prop.getProperty("db.url") + "/" + prop.getProperty("db.database"));
+            dataSourceBuilder.url("jdbc:mariadb://" + prop.getProperty("db.url") + "/" + prop.getProperty("db.database"));
             dataSourceBuilder.username(prop.getProperty("db.username"));
             dataSourceBuilder.password(prop.getProperty("db.password"));
         } catch (Exception e) {
