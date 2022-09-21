@@ -1,13 +1,12 @@
 package pe.edu.pucp.dovah.RRHH.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
-public class Usuario {
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idUsuario;
@@ -16,24 +15,21 @@ public class Usuario {
     private char genero;
     private String codigoPUCP;
     private String correo;
-    private Date fechaCreacion;
-    private Date fechaActivacion;
-    private boolean activo;
+    private LocalDateTime fechaCreacion;
+    private LocalDateTime fechaActivacion;
 
     protected Usuario() {}
 
-    public Usuario(int idUsuario, String nombre,
+    public Usuario(String nombre,
                    String apellido, char genero, String codigoPUCP,
-                   String correo, Date fechaCreacion, Date fechaActivacion, boolean activo) {
-        this.idUsuario = idUsuario;
+                   String correo) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.genero = genero;
         this.codigoPUCP = codigoPUCP;
         this.correo = correo;
-        this.fechaCreacion = fechaCreacion;
-        this.fechaActivacion = fechaActivacion;
-        this.activo = activo;
+        this.fechaCreacion = LocalDateTime.now();
+        this.fechaActivacion=LocalDateTime.now();
     }
 
     @Override
@@ -42,8 +38,7 @@ public class Usuario {
                              idUsuario, nombre, apellido,codigoPUCP);
     }
 
-
-    public int getIdUsuario() {
+    public long getIdUsuario() {
         return idUsuario;
     }
 
@@ -91,27 +86,20 @@ public class Usuario {
         this.correo = correo;
     }
 
-    public Date getFechaCreacion() {
+    public LocalDateTime getFechaCreacion() {
         return fechaCreacion;
     }
 
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
 
-    public Date getFechaActivacion() {
+    public LocalDateTime getFechaActivacion() {
         return fechaActivacion;
     }
 
-    public void setFechaActivacion(Date fechaActivacion) {
+    public void setFechaActivacion(LocalDateTime fechaActivacion) {
         this.fechaActivacion = fechaActivacion;
     }
 
-    public boolean isActivo() {
-        return activo;
-    }
-
-    public void setActivo(boolean activo) {
-        this.activo = activo;
-    }
 }
