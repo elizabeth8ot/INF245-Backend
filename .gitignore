@@ -35,3 +35,4 @@ build/
 # config db
 database.properties
 logfile.txt
+*.gz
