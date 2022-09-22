@@ -6,10 +6,17 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
+/*
+ * Nombre del archivo: Usuario
+ * Fecha de creación: 20/09/2022 , 18:00
+ * Autor: Lloyd Castillo Ramos
+ * Descripción: Clase usuario
+ */
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Usuario {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idUsuario;
@@ -29,6 +36,7 @@ public abstract class Usuario {
     public Usuario(String nombre,
                    String apellido, char genero, String codigoPUCP,
                    String correo) {
+
         this.nombre = nombre;
         this.apellido = apellido;
         this.genero = genero;
@@ -36,10 +44,12 @@ public abstract class Usuario {
         this.correo = correo;
         this.fechaCreacion = LocalDateTime.now();
         this.fechaActivacion=LocalDateTime.now();
+
     }
 
     @Override
     public String toString() {
+
         return String.format("Usuario[id=%d,nombre='%s',apellido='%s',codigo='%s'",
                              idUsuario, nombre, apellido,codigoPUCP);
     }
@@ -76,9 +86,7 @@ public abstract class Usuario {
         this.genero = genero;
     }
 
-    public String getCodigoPUCP() {
-        return codigoPUCP;
-    }
+    public String getCodigoPUCP() { return codigoPUCP;}
 
     public void setCodigoPUCP(String codigoPUCP) {
         this.codigoPUCP = codigoPUCP;
