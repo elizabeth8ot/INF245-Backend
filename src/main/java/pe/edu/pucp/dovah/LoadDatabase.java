@@ -1,3 +1,10 @@
+/**
+ * Nombre del archivo: LoadDatabase.java
+ * Fecha de creacion: 19/09/2022
+ * Autor: Carlos Toro
+ * Descripcion: Clase para crear datos base para pruebas
+ */
+
 package pe.edu.pucp.dovah;
 
 import org.slf4j.Logger;
@@ -14,6 +21,7 @@ import pe.edu.pucp.dovah.asignaciones.repository.TareaRepository;
 
 @Configuration
 public class LoadDatabase {
+
     private final static Logger log = LoggerFactory.getLogger(LoadDatabase.class);
 
     @Bean
@@ -47,4 +55,5 @@ public class LoadDatabase {
             }
         };
     }
+
 }

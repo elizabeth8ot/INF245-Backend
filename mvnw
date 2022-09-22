@@ -1,4 +1,10 @@
 #!/bin/sh
+
+# Nombre del archivo: mvnw
+# Fecha de creacion: 19/09/2022
+# Autor: Carlos Toro
+# Descripcion: Archivo de ayuda para maven
+
 # ----------------------------------------------------------------------------
 # Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
