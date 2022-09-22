@@ -8,7 +8,7 @@ import java.util.Date;
 /*
  * Nombre del archivo: CoordinadorDeTesis
  * Fecha de creación: 20/09/2022 , 18:00
- * Autor: ERWIN
+ * Autor: Lloyd Castillo Ramos
  * Descripción: Clase CoordinadorDeTesis
  */
 @Entity

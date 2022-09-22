@@ -5,7 +5,7 @@ import java.util.Date;
 /*
  * Nombre del archivo: Profesor
  * Fecha de creación: 20/09/2022 , 18:00
- * Autor: ERWIN
+ * Autor: Lloyd Castillo Ramos
  * Descripción: Clase profesor
  */
 @Entity

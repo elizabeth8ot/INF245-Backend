@@ -13,7 +13,7 @@ import java.util.List;
  /*
  * Nombre del archivo: AdmnistradorController
  * Fecha de creación: 20/09/2022 , 18:00
- * Autor: ERWIN
+ * Autor: Lloyd Castillo Ramos
  * Descripción: Clase que maneja el controlador de la clase administrador
  */
 @BasePathAwareController

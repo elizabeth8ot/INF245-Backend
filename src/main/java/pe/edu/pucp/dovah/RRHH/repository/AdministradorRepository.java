@@ -6,7 +6,7 @@ import pe.edu.pucp.dovah.RRHH.model.Administrador;
 /*
  * Nombre del archivo: AdmnistradorRepository
  * Fecha de creación: 20/09/2022 , 18:00
- * Autor: ERWIN
+ * Autor: Lloyd Castillo Ramos
  * Descripción: Interfaz encargada de manejar los metodos trabajados sobre la entidad Admnistrador
  */
 @Repository

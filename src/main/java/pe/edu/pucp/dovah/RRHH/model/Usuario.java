@@ -9,9 +9,10 @@ import java.util.List;
 /*
  * Nombre del archivo: Usuario
  * Fecha de creación: 20/09/2022 , 18:00
- * Autor: ERWIN
+ * Autor: Lloyd Castillo Ramos
  * Descripción: Clase usuario
  */
+
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Usuario {
