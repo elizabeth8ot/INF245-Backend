@@ -1,3 +1,10 @@
+/**
+ * Nombre del archivo: DataSourceConfig.java
+ * Fecha de creacion: 19/09/2022
+ * Autor: Carlos Toro
+ * Descripcion: Clase para cargar informacion de base de datos de un archivo
+ */
+
 package pe.edu.pucp.dovah;
 
 import org.springframework.boot.jdbc.DataSourceBuilder;

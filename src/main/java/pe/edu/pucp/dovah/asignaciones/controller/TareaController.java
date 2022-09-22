@@ -1,3 +1,10 @@
+/**
+ * Nombre del archivo: TareaController.java
+ * Fecha de creacion: 20/09/2022
+ * Autor: Carlos Toro
+ * Descripcion: Clase que implementa la api de tareas
+ */
+
 package pe.edu.pucp.dovah.asignaciones.controller;
 
 import org.json.JSONObject;

@@ -1,3 +1,10 @@
+<!--
+Nombre del archivo: README.md
+Fecha de creacion: 19/09/2022
+Autor: Carlos Toro
+Descripcion: Archivo con instrucciones para ejecutar el backend
+-->
+
 # Backend
 
 Para ejecutarlo, necesitas configurar la base de datos. Para lograr esto debe crear un archivo

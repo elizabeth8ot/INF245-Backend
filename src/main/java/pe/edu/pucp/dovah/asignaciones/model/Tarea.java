@@ -1,3 +1,10 @@
+/**
+ * Nombre del archivo: Tarea.java
+ * Fecha de creacion: 20/09/2022
+ * Autor: Carlos Toro
+ * Descripcion: Clase que implementa el modelo de la base de datos
+ */
+
 package pe.edu.pucp.dovah.asignaciones.model;
 
 import pe.edu.pucp.dovah.RRHH.model.Usuario;
