@@ -6,8 +6,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDateTime;
 import java.util.Date;
+/*
+ * Nombre del archivo: Administrador
+ * Fecha de creación: 20/09/2022 , 18:00
+ * Autor: ERWIN
+ * Descripción: Clase admnistrador
+ */
 @Entity
 public class Administrador extends Usuario{
+
     @GeneratedValue(strategy = GenerationType.AUTO)
     private LocalDateTime lastLogin;
     private boolean activo;
@@ -16,9 +23,11 @@ public class Administrador extends Usuario{
 
 
     public Administrador(String nombre, String apellido, char genero, String codigoPUCP, String correo) {
+
         super(nombre, apellido, genero, codigoPUCP, correo);
         this.lastLogin = LocalDateTime.now();
         this.activo = true;
+
     }
 
     public LocalDateTime getLastLogin() {
@@ -36,4 +45,5 @@ public class Administrador extends Usuario{
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
+
 }

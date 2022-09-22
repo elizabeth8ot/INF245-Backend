@@ -15,6 +15,12 @@ import pe.edu.pucp.dovah.asignaciones.model.Tarea;
 import java.util.List;
 import java.util.Map;
 
+/*
+ * Nombre del archivo: ProfesorController
+ * Fecha de creación: 20/09/2022 , 18:00
+ * Autor: ERWIN
+ * Descripción: Clase que maneja el controlador de la clase profesor
+ */
 @BasePathAwareController
 @RestController
 public class ProfesorController {
@@ -22,16 +28,20 @@ public class ProfesorController {
     private final static Logger log = LoggerFactory.getLogger(ProfesorController.class);
 
     public ProfesorController(ProfesorRepository repository) {
+
         this.repository = repository;
+
     }
 
     /*
-        Listar todas los profesores
+        Listar todos los profesores
     */
 
     @GetMapping("/profesor")
     List<Profesor> all(){
+
         return repository.findAll();
+
     }
 
     /*
@@ -40,14 +50,18 @@ public class ProfesorController {
 
     @GetMapping("/profesor/{id}")
     Profesor obtenerProfesorPorId(@PathVariable int id){
+
         return repository.findById(id).orElseThrow(() -> new UsuarioNotFoundException(id));
+
     }
 
 
 
     @DeleteMapping("/profesor/{id}")
     void eliminarProfesor(@PathVariable int id){
+
         repository.deleteById(id);
+
     }
     /*
         Insertar nuevo profesor
@@ -55,6 +69,7 @@ public class ProfesorController {
 
     @PostMapping("/profesor")
     Profesor nuevoProfesor(@RequestBody Map<String,Object> nuevoProfesor){
+
         log.info("Agregando profesor");
         var json = new JSONObject(nuevoProfesor);
         var profesor = new Profesor(json.getString("nombre"),json.getString("apellido"),
@@ -63,5 +78,7 @@ public class ProfesorController {
 
 
         return repository.save(profesor);
+
     }
+
 }
