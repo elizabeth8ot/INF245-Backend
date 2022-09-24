@@ -8,7 +8,7 @@ Descripcion: Archivo con instrucciones para ejecutar el backend
 # Backend
 
 Para ejecutarlo, necesitas configurar la base de datos. Para lograr esto debe crear un archivo
-`server.properties` e insertar/modificar el siguiente contenido
+`database.properties` e insertar/modificar el siguiente contenido
 ```properties
 db.url = localhost
 db.username = dovah
