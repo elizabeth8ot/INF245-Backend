@@ -18,9 +18,10 @@ public class Profesor extends Usuario {
 
     protected Profesor() {}
 
-    public Profesor(String nombre, String apellido, char genero, String codigoPUCP, String correo, String urlDisponibilidad) {
+    public Profesor(String nombre, String apellido, char genero, String codigoPUCP, String correo, String urlDisponibilidad,
+                    String password) {
 
-        super(nombre, apellido, genero, codigoPUCP, correo);
+        super(nombre, apellido, genero, codigoPUCP, correo,password);
         this.urlDisponibilidad = urlDisponibilidad;
         this.activo = true;
 

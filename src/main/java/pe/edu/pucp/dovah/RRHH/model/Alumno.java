@@ -17,9 +17,9 @@ public class Alumno extends Usuario{
 
     protected Alumno() {}
 
-    public Alumno(String nombre, String apellido, char genero, String codigoPUCP, String correo) {
+    public Alumno(String nombre, String apellido, char genero, String codigoPUCP, String correo,String password) {
 
-        super(nombre, apellido, genero, codigoPUCP, correo);
+        super(nombre, apellido, genero, codigoPUCP, correo,password);
         this.activo = true;
 
     }

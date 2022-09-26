@@ -25,8 +25,10 @@ public abstract class Usuario {
     private char genero;
     private String codigoPUCP;
     private String correo;
+    private String password;
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaActivacion;
+
 
     @ManyToMany
     private List<Tarea> listaTareas;
@@ -35,7 +37,7 @@ public abstract class Usuario {
 
     public Usuario(String nombre,
                    String apellido, char genero, String codigoPUCP,
-                   String correo) {
+                   String correo,String password) {
 
         this.nombre = nombre;
         this.apellido = apellido;
@@ -44,6 +46,7 @@ public abstract class Usuario {
         this.correo = correo;
         this.fechaCreacion = LocalDateTime.now();
         this.fechaActivacion=LocalDateTime.now();
+        this.password = password;
 
     }
 
@@ -54,7 +57,7 @@ public abstract class Usuario {
                              idUsuario, nombre, apellido,codigoPUCP);
     }
 
-    public long getIdUsuario() {
+    public int getIdUsuario() {
         return idUsuario;
     }
 
@@ -116,4 +119,19 @@ public abstract class Usuario {
         this.fechaActivacion = fechaActivacion;
     }
 
+    public List<Tarea> getListaTareas() {
+        return listaTareas;
+    }
+
+    public void setListaTareas(List<Tarea> listaTareas) {
+        this.listaTareas = listaTareas;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
