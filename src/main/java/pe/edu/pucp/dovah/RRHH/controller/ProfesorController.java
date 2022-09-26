@@ -74,7 +74,8 @@ public class ProfesorController {
         var json = new JSONObject(nuevoProfesor);
         var profesor = new Profesor(json.getString("nombre"),json.getString("apellido"),
                                     json.getString("genero").charAt(0),json.getString("codigoPUCP"),
-                                    json.getString("correo"),json.getString("urlDisponibilidad"));
+                                    json.getString("correo"),json.getString("urlDisponibilidad"),
+                                    json.getString("password"));
 
 
         return repository.save(profesor);

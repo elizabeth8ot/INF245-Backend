@@ -29,7 +29,7 @@ public class LoadDatabase {
         return (args) -> {
             if(repository.findAll().isEmpty()){
                 log.info("Creando administrador "+repository.save(new Administrador("Juan","Veliz",
-                        'M',"20193345","jveliz@gmail.com")));
+                        'M',"20193345","jveliz@gmail.com","zjcveli")));
             }
         };
     }
@@ -38,7 +38,7 @@ public class LoadDatabase {
         return (args) -> {
             if(repository.findAll().isEmpty()){
                 log.info(("Creando profesor "+repository.save(new Profesor("Rony","Cueva",'M',
-                        "X2458","rcueva@pucp.edu.pe","http//...."))));
+                        "X2458","rcueva@pucp.edu.pe","http//....","arcuev"))));
             }
 
         };

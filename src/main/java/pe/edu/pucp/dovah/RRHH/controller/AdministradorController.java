@@ -61,7 +61,7 @@ public class AdministradorController {
 
     */
     @DeleteMapping("/administrador/{id}")
-    void eliminarAdministrador(@PathVariable int id){
+    void eliminarAdministrador(@PathVariable(name = "id") int id){
 
         repository.deleteById(id);
 
@@ -79,7 +79,7 @@ public class AdministradorController {
         var json = new JSONObject(nuevoAdministrador);
         var administrador = new Administrador(json.getString("nombre"),json.getString("apellido"),
                                               json.getString("genero").charAt(0), json.getString("codigoPUCP"),
-                                              json.getString("correo"));
+                                              json.getString("correo"),json.getString("password"));
 
 
         return repository.save(administrador);

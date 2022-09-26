@@ -17,9 +17,9 @@ public class CoordinadorTesis extends Usuario {
 
     protected CoordinadorTesis() {}
 
-    public CoordinadorTesis(String nombre, String apellido, char genero, String codigoPUCP, String correo) {
+    public CoordinadorTesis(String nombre, String apellido, char genero, String codigoPUCP, String correo,String password) {
 
-        super(nombre, apellido, genero, codigoPUCP, correo);
+        super(nombre, apellido, genero, codigoPUCP, correo,password);
         this.activo = true;
 
     }
