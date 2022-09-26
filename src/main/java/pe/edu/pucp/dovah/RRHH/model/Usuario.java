@@ -119,14 +119,6 @@ public abstract class Usuario {
         this.fechaActivacion = fechaActivacion;
     }
 
-    public List<Tarea> getListaTareas() {
-        return listaTareas;
-    }
-
-    public void setListaTareas(List<Tarea> listaTareas) {
-        this.listaTareas = listaTareas;
-    }
-
     public String getPassword() {
         return password;
     }
