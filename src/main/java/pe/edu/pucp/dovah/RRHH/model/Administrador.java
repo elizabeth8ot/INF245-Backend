@@ -14,14 +14,11 @@ import java.util.Date;
  */
 @Entity
 @PrimaryKeyJoinColumn(name = "idAdministrador")
-@Table(name = "administrador")
-@SQLDelete(sql = "UPDATE administrador SET activo=true WHERE id_administrador=?")
-@Where(clause = "activo = false")
 public class Administrador extends Usuario{
 
     //@GeneratedValue(strategy = GenerationType.AUTO)
     private LocalDateTime lastLogin;
-    private boolean activo = Boolean.FALSE;
+    private boolean activo;
 
     protected Administrador() {};
 

@@ -60,11 +60,16 @@ public class AdministradorController {
         Eliminar un administrador
 
     */
-    @DeleteMapping("/administrador/{id}")
-    void eliminarAdministrador(@PathVariable(name = "id") int id){
+    @PostMapping("/administrador/eliminar")
+    Administrador eliminarAdministrador(@RequestBody Map<String, Object> map){
 
-        repository.deleteById(id);
-
+        var json = new JSONObject(map);
+        int id = json.getInt("idUsuario");
+        var administrador = repository.findById(id).orElseThrow(() -> new UsuarioNotFoundException(id));
+        log.info(String.format("Eliminado administrador con id '%d'",
+                administrador.getIdUsuario()));
+        administrador.setActivo(false);
+        return repository.save(administrador);
     }
 
      /*
