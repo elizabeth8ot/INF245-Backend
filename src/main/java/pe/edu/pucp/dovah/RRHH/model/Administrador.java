@@ -1,9 +1,6 @@
 package pe.edu.pucp.dovah.RRHH.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Date;
 /*
@@ -13,9 +10,10 @@ import java.util.Date;
  * Descripción: Clase admnistrador
  */
 @Entity
+@PrimaryKeyJoinColumn(name = "idAdmnistrador")
 public class Administrador extends Usuario{
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     private LocalDateTime lastLogin;
     private boolean activo;
 

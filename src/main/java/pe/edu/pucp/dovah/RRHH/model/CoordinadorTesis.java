@@ -1,9 +1,6 @@
 package pe.edu.pucp.dovah.RRHH.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 /*
  * Nombre del archivo: CoordinadorDeTesis
@@ -12,9 +9,10 @@ import java.util.Date;
  * Descripción: Clase CoordinadorDeTesis
  */
 @Entity
+@PrimaryKeyJoinColumn(name = "idCoordinadorTesis")
 public class CoordinadorTesis extends Usuario {
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     private boolean activo;
 
     protected CoordinadorTesis() {}
