@@ -9,9 +9,10 @@ import java.util.Date;
  * Descripción: Clase profesor
  */
 @Entity
+@PrimaryKeyJoinColumn(name = "idProfesor")
 public class Profesor extends Usuario {
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     private String urlDisponibilidad;
     private boolean activo;
 
